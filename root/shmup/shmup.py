@@ -44,7 +44,7 @@ def draw_shield_bar(surface, x, y, pct):
         pct = 0
     BAR_LENGTH = 100
     BAR_HEIGHT = 10
-    fill = (pct/100) * BAR_LENGTH
+    fill = (pct//100) * BAR_LENGTH
     outline_rect = pygame.Rect(x, y, BAR_LENGTH, BAR_HEIGHT)
     fill_rect = pygame.Rect(x, y, fill, BAR_HEIGHT)
     pygame.draw.rect(surface, GREEN, fill_rect)
@@ -68,6 +68,8 @@ class Player(pygame.sprite.Sprite):
         self.rect.bottom = HEIGHT - 10
         self.speedx = 0
         self.shield = 100
+        self.shoot_delay = 250
+        self.last_shot = pygame.time.get_ticks()
 
     def update(self):
         self.speedx = 0
@@ -81,6 +83,8 @@ class Player(pygame.sprite.Sprite):
             self.speedy = -5
         if keystate[pygame.K_s]:
             self.speedy = 5
+        if keystate[pygame.K_SPACE]:
+            self.shoot()
 
         self.rect.x += self.speedx
         self.rect.y += self.speedy
@@ -95,10 +99,13 @@ class Player(pygame.sprite.Sprite):
             self.rect.bottom = HEIGHT
 
     def shoot(self):
-        bullet = Bullet(self.rect.centerx, self.rect.top)
-        all_sprites.add(bullet)
-        bullets.add(bullet)
-        shoot_sound.play()
+        now = pygame.time.get_ticks()
+        if now - self.last_shot > self.shoot_delay:
+            bullet = Bullet(self.rect.centerx, self.rect.top)
+            all_sprites.add(bullet)
+            bullets.add(bullet)
+            shoot_sound.play()
+            self.last_shot = now
 
 
 class Mob(pygame.sprite.Sprite):
