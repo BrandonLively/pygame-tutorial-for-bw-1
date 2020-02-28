@@ -65,6 +65,7 @@ def draw_lives(surf, x, y, lives, img):
         img_rect.y = y
         surf.blit(img, img_rect)
 
+
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
@@ -85,8 +86,8 @@ class Player(pygame.sprite.Sprite):
 
     def update(self):
         if self.hidden and pygame.time.get_ticks() - self.hide_timer > 1000:
-            self.rect.centerx = WIDTH // 2
-            self.rect.bottom = HEIGHT - 10
+           # self.rect.centerx = WIDTH // 2
+           # self.rect.bottom = HEIGHT - 10
             self.hidden = False
 
         self.speedx = 0
@@ -127,7 +128,7 @@ class Player(pygame.sprite.Sprite):
     def hide(self):
         self.hidden = True
         self.hide_timer = pygame.time.get_ticks()
-        self.rect.center = (WIDTH // 2, HEIGHT + 200)
+        #self.rect.center = (WIDTH // 2, HEIGHT + 200)
 
 
 class Mob(pygame.sprite.Sprite):
@@ -213,6 +214,22 @@ class Explosion(pygame.sprite.Sprite):
                 self.rect.center = center
 
 
+def show_game_over_screen():
+    screen.blit(background, background_rect)
+    draw_text(screen, "SHMUP!", 64, WIDTH // 2, HEIGHT // 4)
+    draw_text(screen, "Arrow keys move, Space to fire", 22, WIDTH // 2, HEIGHT // 2)
+    draw_text(screen, "Press a key", 18, WIDTH // 2, HEIGHT * 3 // 4)
+    pygame.display.flip()
+    waiting = True
+    while waiting:
+        clock.tick(FPS)
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+            if event.type == pygame.KEYUP:
+                waiting = False
+
+
 # load all game graphics
 background = pygame.image.load(path.join(img_dir, "shmup_background.png")).convert()
 background_rect = background.get_rect()
@@ -260,22 +277,32 @@ for sound in expl_sounds:
 pygame.mixer.music.load(path.join(sound_dir, 'background.ogg'))
 pygame.mixer.music.set_volume(0.4)
 
+pygame.mixer.music.play(loops=-1)
 all_sprites = pygame.sprite.Group()
 mobs = pygame.sprite.Group()
 bullets = pygame.sprite.Group()
-
 player = Player()
 all_sprites.add(player)
-
 for i in range(8):
     new_mob()
 
 score = 0
-pygame.mixer.music.play(loops=-1)
 # Game Loop
 running = True
-
+game_over = True
 while running:
+    if game_over:
+        show_game_over_screen()
+        game_over = False
+        all_sprites = pygame.sprite.Group()
+        mobs = pygame.sprite.Group()
+        bullets = pygame.sprite.Group()
+        player = Player()
+        all_sprites.add(player)
+        for i in range(8):
+            new_mob()
+
+        score = 0
     # keep loop running at the right speed
     clock.tick(FPS)
     # Process input (events)
@@ -313,7 +340,7 @@ while running:
             player.shield = 100
     # If player died and explosion has finished playing
     if player.lives == 0 and not death_explosion.alive():
-        running = False
+        game_over = True
     # Draw / render
     screen.fill(BLACK)
     screen.blit(background, background_rect)
