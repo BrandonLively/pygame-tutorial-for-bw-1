@@ -8,6 +8,7 @@ FPS = 60
 
 # define asset folders
 img_dir = path.join(path.dirname(__file__), 'assets/img')
+sound_dir = path.join(path.dirname(__file__), 'assets/sound')
 
 # define colors
 WHITE = (255, 255, 255)
@@ -17,6 +18,7 @@ GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 
 # initialize Pygame and create window
+pygame.mixer.pre_init(44100, -16, 1, 512)
 pygame.init()
 # allows sound
 pygame.mixer.init()
@@ -79,6 +81,7 @@ class Player(pygame.sprite.Sprite):
         bullet = Bullet(self.rect.centerx, self.rect.top)
         all_sprites.add(bullet)
         bullets.add(bullet)
+        shoot_sound.play()
 
 
 class Mob(pygame.sprite.Sprite):
@@ -151,6 +154,19 @@ meteor_list = ['meteorBrown_big1.png', 'meteorBrown_big2.png', 'meteorBrown_med1
 for img in meteor_list:
     meteor_images.append(pygame.image.load(path.join(img_dir, img)).convert())
 
+# load all game sounds
+shoot_sound = pygame.mixer.Sound(path.join(sound_dir, "laser_shoot.wav"))
+shoot_sound.set_volume(.2)
+expl_sounds = []
+for sound in ['explosion_1.wav', 'explosion_2.wav', 'explosion_3.wav']:
+    expl_sounds.append(pygame.mixer.Sound(path.join(sound_dir, sound)))
+
+for sound in expl_sounds:
+    sound.set_volume(.15)
+
+pygame.mixer.music.load(path.join(sound_dir, 'background.ogg'))
+pygame.mixer.music.set_volume(0.4)
+
 all_sprites = pygame.sprite.Group()
 mobs = pygame.sprite.Group()
 bullets = pygame.sprite.Group()
@@ -164,6 +180,7 @@ for i in range(8):
     mobs.add(m)
 
 score = 0
+pygame.mixer.music.play(loops = -1)
 # Game Loop
 running = True
 while running:
@@ -184,6 +201,7 @@ while running:
     hits = pygame.sprite.groupcollide(mobs, bullets, True, True)
     for hit in hits:
         score += 70 - hit.radius
+        random.choice(expl_sounds).play()
         m = Mob()
         all_sprites.add(m)
         mobs.add(m)
