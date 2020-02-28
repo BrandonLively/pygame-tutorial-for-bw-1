@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="652ed7b3-a3e0-4e37-981c-d6e865ed8681" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/root/sprite_example.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/root/shmup/shmup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/root/sprite_example/assets/img/test_char.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/pygame_template.py" beforeDir="false" afterPath="$PROJECT_DIR$/root/pygame_template.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/sprite_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/root/sprite_example/sprite_example.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,9 +32,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/root/sprite_example.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/root/shmup/shmup.py" />
   </component>
-  <component name="RunManager" selected="Python.sprite_example">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Brand\Desktop\CS\pygame-tutorial-for-bw-1\root\sprite_example" />
+      <recent name="C:\Users\Brand\Desktop\CS\pygame-tutorial-for-bw-1\root\shump" />
+      <recent name="C:\Users\Brand\Desktop\CS\pygame-tutorial-for-bw-1\root\assets\img" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.shmup">
     <configuration name="pygame_template" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="pygame-tutorial-for-bw-1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -56,6 +64,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="shmup" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="pygame-tutorial-for-bw-1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Brand\Desktop\CS\pygame-tutorial-for-bw-1\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/root/shmup" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/root/shmup/shmup.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="sprite_example" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="pygame-tutorial-for-bw-1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -69,7 +99,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/root/sprite_example.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Brand\Desktop\CS\pygame-tutorial-for-bw-1\root\sprite_example\sprite_example.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -79,8 +109,9 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.sprite_example" />
       <item itemvalue="Python.pygame_template" />
+      <item itemvalue="Python.sprite_example" />
+      <item itemvalue="Python.shmup" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -93,7 +124,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1582872347414</updated>
-      <workItem from="1582872355709" duration="2827000" />
+      <workItem from="1582872355709" duration="4471000" />
     </task>
     <task id="LOCAL-00001" summary="Virtual Env setup">
       <created>1582872428085</created>
@@ -109,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582873643159</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Setup sprite_example - Added temp player class">
+      <created>1582884596833</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1582884596833</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,37 +156,38 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Virtual Env setup" />
     <MESSAGE value="Pygame Skeleton setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pygame Skeleton setup" />
+    <MESSAGE value="Setup sprite_example - Added temp player class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Setup sprite_example - Added temp player class" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582884483931">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582886129117">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582884483931" />
-    <state x="385" y="9" key="CommitChangelistDialog2" timestamp="1582873642385">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582886129117" />
+    <state x="385" y="9" key="CommitChangelistDialog2" timestamp="1582884596024">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="385" y="9" key="CommitChangelistDialog2/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582873642385" />
-    <state x="548" y="167" key="FileChooserDialogImpl" timestamp="1582884482908">
+    <state x="385" y="9" key="CommitChangelistDialog2/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582884596024" />
+    <state x="548" y="167" key="FileChooserDialogImpl" timestamp="1582886127571">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="548" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582884482908" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1582884528916">
+    <state x="548" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582886127571" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1582886130643">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582884528916" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1582884528915">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582886130643" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1582886130642">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582884528915" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1582884528915">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582886130642" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1582886130642">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582884528915" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1582884528916">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582886130642" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1582886130642">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582884528916" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582886130642" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1582884486268">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -165,29 +204,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582884486268" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1582873650499">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1582884598718">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582873650499" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/root/sprite_example.py</url>
-          <line>39</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/root/sprite_example.py</url>
-          <line>41</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582884598718" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1582886085834">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582886085834" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/pygame_tutorial_for_bw_1$sprite_example.coverage" NAME="sprite_example Coverage Results" MODIFIED="1582884528908" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/root" />
+    <SUITE FILE_PATH="coverage/pygame_tutorial_for_bw_1$sprite_example.coverage" NAME="sprite_example Coverage Results" MODIFIED="1582886110633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/root" />
+    <SUITE FILE_PATH="coverage/pygame_tutorial_for_bw_1$shmup.coverage" NAME="shmup Coverage Results" MODIFIED="1582886130634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/root/shmup" />
     <SUITE FILE_PATH="coverage/pygame_tutorial_for_bw_1$pygame_template.coverage" NAME="pygame_template Coverage Results" MODIFIED="1582884452586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/root" />
   </component>
 </project>
