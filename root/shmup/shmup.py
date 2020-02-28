@@ -39,22 +39,31 @@ def draw_text(surf, text, size, x, y):
     text_rect.midtop = (x, y)
     surf.blit(text_surface, text_rect)
 
+
 def draw_shield_bar(surface, x, y, pct):
     if pct < 0:
         pct = 0
     BAR_LENGTH = 100
     BAR_HEIGHT = 10
-    fill = (pct//100) * BAR_LENGTH
+    fill = (pct / 100) * BAR_LENGTH
     outline_rect = pygame.Rect(x, y, BAR_LENGTH, BAR_HEIGHT)
-    fill_rect = pygame.Rect(x, y, fill, BAR_HEIGHT)
+    fill_rect = pygame.Rect(x, y, int(fill), BAR_HEIGHT)
     pygame.draw.rect(surface, GREEN, fill_rect)
     pygame.draw.rect(surface, WHITE, outline_rect, 2)
+
 
 def new_mob():
     m = Mob()
     all_sprites.add(m)
     mobs.add(m)
 
+
+def draw_lives(surf, x, y, lives, img):
+    for i in range(lives):
+        img_rect = img.get_rect()
+        img_rect.x = x + 30 * i
+        img_rect.y = y
+        surf.blit(img, img_rect)
 
 class Player(pygame.sprite.Sprite):
     def __init__(self):
@@ -70,8 +79,16 @@ class Player(pygame.sprite.Sprite):
         self.shield = 100
         self.shoot_delay = 250
         self.last_shot = pygame.time.get_ticks()
+        self.lives = 3
+        self.hidden = False
+        self.hide_timer = pygame.time.get_ticks()
 
     def update(self):
+        if self.hidden and pygame.time.get_ticks() - self.hide_timer > 1000:
+            self.rect.centerx = WIDTH // 2
+            self.rect.bottom = HEIGHT - 10
+            self.hidden = False
+
         self.speedx = 0
         self.speedy = 0
         keystate = pygame.key.get_pressed()
@@ -106,6 +123,11 @@ class Player(pygame.sprite.Sprite):
             bullets.add(bullet)
             shoot_sound.play()
             self.last_shot = now
+
+    def hide(self):
+        self.hidden = True
+        self.hide_timer = pygame.time.get_ticks()
+        self.rect.center = (WIDTH // 2, HEIGHT + 200)
 
 
 class Mob(pygame.sprite.Sprite):
@@ -165,6 +187,7 @@ class Bullet(pygame.sprite.Sprite):
         if self.rect.bottom < 0:
             self.kill()
 
+
 class Explosion(pygame.sprite.Sprite):
     def __init__(self, center, size):
         pygame.sprite.Sprite.__init__(self)
@@ -195,6 +218,8 @@ background = pygame.image.load(path.join(img_dir, "shmup_background.png")).conve
 background_rect = background.get_rect()
 
 player_img = pygame.image.load(path.join(img_dir, "playerShip2_orange.png")).convert()
+player_mini_img = pygame.transform.scale(player_img, (25, 19))
+player_mini_img.set_colorkey(BLACK)
 bullet_img = pygame.image.load(path.join(img_dir, "laserRed16.png")).convert()
 meteor_images = []
 meteor_list = ['meteorBrown_big1.png', 'meteorBrown_big2.png', 'meteorBrown_med1.png', 'meteorBrown_med3.png',
@@ -205,6 +230,7 @@ for img in meteor_list:
 explosion_anim = {}
 explosion_anim['lg'] = []
 explosion_anim['sm'] = []
+explosion_anim['player'] = []
 
 for i in range(9):
     filename = f'regularExplosion0{i}.png'
@@ -214,8 +240,14 @@ for i in range(9):
     explosion_anim['lg'].append(img_lg)
     img_sm = pygame.transform.scale(img, (32, 32))
     explosion_anim['sm'].append(img_sm)
+    filename = f'sonicExplosion0{i}.png'
+    img = pygame.image.load(path.join(img_dir, filename)).convert()
+    img.set_colorkey(BLACK)
+    explosion_anim['player'].append(img)
 
 # load all game sounds
+player_die_sound = pygame.mixer.Sound(path.join(sound_dir, 'rumble1.ogg'))
+player_die_sound.set_volume(.3)
 shoot_sound = pygame.mixer.Sound(path.join(sound_dir, "laser_shoot.wav"))
 shoot_sound.set_volume(.2)
 expl_sounds = []
@@ -267,19 +299,28 @@ while running:
         new_mob()
     # check to see if mob hit player
     hits = pygame.sprite.spritecollide(player, mobs, True, pygame.sprite.collide_circle)
+    death_explosion = Explosion(player.rect.center, 'player')
     for hit in hits:
         expl = Explosion(hit.rect.center, 'sm')
         all_sprites.add(expl)
         player.shield -= hit.radius
         new_mob()
         if player.shield <= 0:
-            running = False
+            player_die_sound.play()
+            all_sprites.add(death_explosion)
+            player.hide()
+            player.lives -= 1
+            player.shield = 100
+    # If player died and explosion has finished playing
+    if player.lives == 0 and not death_explosion.alive():
+        running = False
     # Draw / render
     screen.fill(BLACK)
     screen.blit(background, background_rect)
     all_sprites.draw(screen)
     draw_text(screen, str(score), 18, WIDTH // 2, 10)
     draw_shield_bar(screen, 5, 5, player.shield)
+    draw_lives(screen, WIDTH - 100, 5, player.lives, player_mini_img)
     # sets up double buffering - always doing this After drawing everything
     pygame.display.flip()
 
