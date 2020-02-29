@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="652ed7b3-a3e0-4e37-981c-d6e865ed8681" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/root/tile_game/consumable.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/root/tile_game/entity.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/root/tile_game/item.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/root/tile_game/map.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/root/tile_game/mob.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/root/tile_game/player.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/root/tile_game/room.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/root/tile_game/tile_game.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/root/tile_game/weapon.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/shmup/shmup.py" beforeDir="false" afterPath="$PROJECT_DIR$/root/shmup/shmup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,9 +38,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/root/shmup/shmup.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/root/tile_game" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Brand\Desktop\CS\pygame-tutorial-for-bw-1\root\tile_game" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Brand\Desktop\CS\pygame-tutorial-for-bw-1\root\shmup\assets\sound" />
       <recent name="C:\Users\Brand\Desktop\CS\pygame-tutorial-for-bw-1\root\shmup\assets\img" />
@@ -124,7 +135,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1582872347414</updated>
-      <workItem from="1582872355709" duration="20152000" />
+      <workItem from="1582872355709" duration="26009000" />
     </task>
     <task id="LOCAL-00001" summary="Virtual Env setup">
       <created>1582872428085</created>
@@ -217,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582903040236</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="added explosion upon death&#10;&#10;ToDo - Bug with the player.hide() method call">
+      <created>1582905248603</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1582905248603</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,37 +255,38 @@
     <MESSAGE value="added autofire with delay" />
     <MESSAGE value="added explosions" />
     <MESSAGE value="added lives and die sound" />
-    <option name="LAST_COMMIT_MESSAGE" value="added lives and die sound" />
+    <MESSAGE value="added explosion upon death&#10;&#10;ToDo - Bug with the player.hide() method call" />
+    <option name="LAST_COMMIT_MESSAGE" value="added explosion upon death&#10;&#10;ToDo - Bug with the player.hide() method call" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582886129117">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582886129117" />
-    <state x="385" y="0" key="CommitChangelistDialog2" timestamp="1582903039530">
+    <state x="385" y="0" key="CommitChangelistDialog2" timestamp="1582905247343">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="385" y="0" key="CommitChangelistDialog2/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582903039530" />
-    <state x="548" y="167" key="FileChooserDialogImpl" timestamp="1582886127571">
+    <state x="385" y="0" key="CommitChangelistDialog2/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582905247343" />
+    <state x="548" y="167" key="FileChooserDialogImpl" timestamp="1582905846776">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="548" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582886127571" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1582905173344">
+    <state x="548" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582905846776" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1582933920624">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582905173344" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1582905173344">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582933920624" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1582933920624">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582905173344" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1582905173344">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582933920624" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1582933920624">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582905173344" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1582905173344">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582933920624" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1582933920624">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582905173344" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582933920624" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1582905085075">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -284,10 +303,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582905085075" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1582903043475">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1582905250964">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582903043475" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1582905250964" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1582886085834">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -295,7 +314,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/pygame_tutorial_for_bw_1$sprite_example.coverage" NAME="sprite_example Coverage Results" MODIFIED="1582886110633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/root" />
-    <SUITE FILE_PATH="coverage/pygame_tutorial_for_bw_1$shmup.coverage" NAME="shmup Coverage Results" MODIFIED="1582905173336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/root/shmup" />
+    <SUITE FILE_PATH="coverage/pygame_tutorial_for_bw_1$shmup.coverage" NAME="shmup Coverage Results" MODIFIED="1582933920600" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/root/shmup" />
     <SUITE FILE_PATH="coverage/pygame_tutorial_for_bw_1$pygame_template.coverage" NAME="pygame_template Coverage Results" MODIFIED="1582884452586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/root" />
   </component>
 </project>
